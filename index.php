@@ -1,8 +1,6 @@
 <?php
-include_once("boxClass.php");
-
+require "boxClass.php";
 $box = new genrateBoxes();
-
 $totalBoxes = $box->getBoxes();
 ?>
 <!doctype html>

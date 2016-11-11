@@ -19,6 +19,9 @@ class genrateBoxes {
 
   public static function getBoxes() {
     if (self::$boxesToShow) {
+      if (self::$boxesToShow % 2 != 0) {
+        self::$boxesToShow++;
+      }
       $numOfBoxesRequested = floor(self::$boxesToShow / 2);
       while (count(self::$totalBoxes) < $numOfBoxesRequested) {
         $rand = rand(1, self::$maxNumberOfImages);
