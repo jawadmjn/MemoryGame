@@ -15,7 +15,7 @@ function  showImage(clickedDiv) {
 
     var img = document.createElement("IMG");
     var imgId = parseInt(atob(boxValues[divId])) - 250;
-    img.src = "images/"+imgId+".png";
+    img.src = "images/"+imgId+".jpg";
     $(clickedDiv).append(img);
     $(clickedDiv).find('img').fadeIn(1000);
     if(!openItem1) {

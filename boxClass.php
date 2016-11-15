@@ -1,7 +1,8 @@
 <?php
 
 class genrateBoxes {
-
+  // If you increase OR decrease number of images in images folder than add total number of images here
+  // For example at the moment we have total 36 images.
   private static $maxNumberOfImages = 36;
   private static $totalBoxes = array();
   private static $totalBoxesEncoded = array();
@@ -10,7 +11,7 @@ class genrateBoxes {
   private static $rows = NULL;
 
   public function __construct() {
-    if (isset($_GET['boxesRequest']) && is_numeric($_GET['boxesRequest']) && $_GET['boxesRequest'] > 0) {
+    if (isset($_GET['boxesRequest']) && is_numeric($_GET['boxesRequest']) && $_GET['boxesRequest'] > 1) {
       self::$boxesToShow = min(self::$maxNumberOfImages, (intval($_GET['boxesRequest'])));
       self::$cols = ceil(sqrt(self::$boxesToShow));
       self::$rows = ceil(self::$boxesToShow / self::$cols);
@@ -19,15 +20,13 @@ class genrateBoxes {
 
   public static function getBoxes() {
     if (self::$boxesToShow) {
-      if (self::$boxesToShow % 2 != 0) {
-        self::$boxesToShow++;
-      }
-      $numOfBoxesRequested = floor(self::$boxesToShow / 2);
-      while (count(self::$totalBoxes) < $numOfBoxesRequested) {
+      while ( count(self::$totalBoxes) < floor(self::$boxesToShow / 2) ) {
         $rand = rand(1, self::$maxNumberOfImages);
-        if (!in_array($rand, self::$totalBoxes))
+        if (!in_array($rand, self::$totalBoxes)) {
           array_push(self::$totalBoxes, $rand);
+        }
       }
+      
       self::$totalBoxes = array_merge(self::$totalBoxes, self::$totalBoxes);
       shuffle(self::$totalBoxes);
     }
