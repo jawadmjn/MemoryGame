@@ -7,7 +7,7 @@ This is a simple Memory game using basic OOP PHP, javascript, css and html.
 looking forward to improve it more.
 
 ## Installation:
-* Clone it and put in your nginx **var/www** OR apache**htdocs** folder.
+* Clone it and put in your nginx **var/www** OR apache **htdocs** folder.
 * Open **index.php** using localhost.
 
 ## Developer:
