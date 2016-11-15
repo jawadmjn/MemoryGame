@@ -43,13 +43,13 @@ function checkBothImages() {
   var imageDiv2 = $(openItem2).children('img').attr('src');
 
   if(imageDiv1 === imageDiv2){
-    $("#"+divId1).css('visibility','hidden');
+    $("#"+divId1).addClass("solved");
     $("#"+divId1).unbind("click");
 
-    $("#"+divId2).css('visibility','hidden');
+    $("#"+divId2).addClass("solved");
     $("#"+divId2).unbind("click");
 
-    solvedBoxes++;
+    solvedBoxes = $('#memory .solved').length / 2;
   }
   else {
     $("#"+divId1).find('img').fadeOut(100, function() {
