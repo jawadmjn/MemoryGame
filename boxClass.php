@@ -30,6 +30,9 @@ class genrateBoxes {
       self::$totalBoxes = array_merge(self::$totalBoxes, self::$totalBoxes);
       shuffle(self::$totalBoxes);
     }
+    // Using this function to store images id in encoded form as cookie.
+    self::setEncodedValues();
+    
     return self::$totalBoxes;
   }
 
@@ -45,7 +48,7 @@ class genrateBoxes {
     foreach (self::$totalBoxes as $value) {
       array_push(self::$totalBoxesEncoded, base64_encode($value + 250));
     }
-    return self::$totalBoxesEncoded;
+    setcookie("totalBoxesEncoded_c", json_encode(self::$totalBoxesEncoded), time() + (86400 * 30), "/"); // 86400 = 1 day
   }
 
 }

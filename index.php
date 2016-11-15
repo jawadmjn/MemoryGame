@@ -11,9 +11,6 @@ $totalBoxes = $box->getBoxes();
     <link rel="stylesheet" href="css/memory.css" />
     <script src="js/lib/jquery.js"></script>
     <script src="js/memory.js"></script>
-    <script type="text/javascript">
-      var boxValues = <?php echo json_encode($box->setEncodedValues()); ?>;
-    </script>
   </head>
   <body>
     <?php
@@ -25,8 +22,9 @@ $totalBoxes = $box->getBoxes();
         echo '<ul>';
         for ($c = 0; $c < $cols; $c++) {
           $i = $r * $cols + $c;
-          if (isset($totalBoxes[$i]))
+          if (isset($totalBoxes[$i])) {
             echo '<li><div id="'.$i.'" onclick="showImage(this);"></div></li>';
+          }
         }
         echo '</ul>';
       }
