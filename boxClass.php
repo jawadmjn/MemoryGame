@@ -11,8 +11,8 @@ class genrateBoxes {
   private static $rows = NULL;
 
   public function __construct() {
-    if (isset($_GET['boxesRequest']) && is_numeric($_GET['boxesRequest']) && $_GET['boxesRequest'] > 1) {
-      self::$boxesToShow = min(self::$maxNumberOfImages, (intval($_GET['boxesRequest'])));
+    if (isset($_POST['boxesRequest']) && is_numeric($_POST['boxesRequest']) && $_POST['boxesRequest'] > 1) {
+      self::$boxesToShow = min(self::$maxNumberOfImages, (intval($_POST['boxesRequest'])));
       self::$cols = ceil(sqrt(self::$boxesToShow));
       self::$rows = ceil(self::$boxesToShow / self::$cols);
     }
