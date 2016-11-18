@@ -35,7 +35,7 @@ $totalBoxes = $box->getBoxes();
     else {
       echo '<h1>Play Memory</h1>'
         . '<form id="memory" action="." method="post">'
-          . '<label for="boxesRequest">Please Enter Number of Cards ( the value should be greater than 1 ):</label>'
+          . '<label for="boxesRequest">Please Enter Number of Cards ( the value should be Numeric and greater than 1 ):</label>'
           . '<input type="text" id="boxesRequest" name="boxesRequest" value="" />'
           . '<input type="submit" value="Start the Game"/>'
         . '</form>';
