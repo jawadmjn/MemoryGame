@@ -18,6 +18,8 @@ $totalBoxes = $box->getBoxes();
       $cols = $box->getCols();
       $rows = $box->getRows();
       echo '<div id="memory">';
+      echo '<a id="exitGame" href=".">Exit Game</a>';
+      echo '<p id="timer"><span id="minutes">0</span> Minutes, <span id="seconds">0</span> Seconds</p>';
       for ($r = 0; $r < $rows; $r++) {
         echo '<ul>';
         for ($c = 0; $c < $cols; $c++) {
@@ -40,7 +42,7 @@ $totalBoxes = $box->getBoxes();
     }
     ?>
     <div id="success">
-      Congratulation you have solved all the puzzles
+      Congratulation you have solved all the puzzles in <span id="successMinutes">0</span> Minutes, <span id="successSeconds">0</span> Seconds
       <p><a href="index.php">Restart the game</a></p>
     </div>
   </body>

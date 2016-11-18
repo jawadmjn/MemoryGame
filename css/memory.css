@@ -1,6 +1,6 @@
 body,div,ul,li {
-  margin: 0 auto;
-  padding: 0;
+  margin: 0px auto;
+  padding: 0px;
 }
 h1 {
   display: block;
@@ -42,8 +42,8 @@ form input[type=submit]{
 
 #memory {
   width: 90%;
-  position:relative;
-  margin:10px auto;
+  position: relative;
+  margin: 20px auto;
 }
 
 #memory ul {
@@ -92,7 +92,29 @@ form input[type=submit]{
   text-align: center;
   font-size: 20px;
 }
+#success span {
+  color: #ff0606;
+}
 
 .solved {
   visibility: hidden;
+}
+
+#exitGame {
+  display: block;
+  position: relative;
+  float: left;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 16px;
+  color: #da0707;
+}
+
+#timer {
+  display: block;
+  position: relative;
+  float: right;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-size: 17px;
 }
